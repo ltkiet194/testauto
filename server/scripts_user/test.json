@@ -1,0 +1,45 @@
+[
+    {
+        "type": "LOG_MESSAGE",
+        "message": "Bắt đầu kịch bản: Tìm và Click Kính (hoặc Dừng).",
+        "delay": 500,
+        "note": "Khởi động kịch bản"
+    },
+    {
+        "type": "IF_ELSE_BLOCK",
+        "note": "Kiểm tra sự tồn tại của 'kinh.png'.",
+        "condition": {
+            "type": "IMAGE_EXISTS",
+            "image": "kinh.png",
+            "timeout_ms": 3000,
+            "threshold": 0.8
+        },
+        "then_actions": [
+            {
+                "type": "LOG_MESSAGE",
+                "message": "Tìm thấy 'kinh.png'. Đang tiến hành click...",
+                "delay": 100
+            },
+            {
+                "type": "Tìm ảnh và click",
+                "image": "kinh.png",
+                "delay": 1000,
+                "threshold": 0.8
+            },
+            {
+                "type": "LOG_MESSAGE",
+                "message": "Đã click 'kinh.png'. Kịch bản hoàn thành nhánh này.",
+                "delay": 500
+            }
+        ],
+        "else_actions": [
+            {
+                "type": "LOG_MESSAGE",
+                "message": "Không tìm thấy 'kinh.png' sau khi chờ. Dừng kịch bản.",
+                "delay": 500,
+                "is_error": true
+            }
+        ],
+        "delay_after_block": 300
+    }
+]
