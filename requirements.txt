@@ -1,0 +1,6 @@
+customtkinter
+requests
+Pillow
+opencv-python
+numpy
+Flask

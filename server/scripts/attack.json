@@ -1,0 +1,62 @@
+[
+    {
+        "type": "Tìm ảnh và click",
+        "details": "Tìm ảnh và click",
+        "image": "kinh.png",
+        "delay": "1500"
+    },
+    {
+        "type": "Tìm ảnh và click",
+        "details": "Tìm ảnh và click",
+        "image": "quai.png",
+        "delay": "1500"
+    },
+    {
+        "type": "Tìm ảnh và click",
+        "details": "Tìm ảnh và click",
+        "image": "search.png",
+        "delay": "1500"
+    },
+    {
+        "type": "Click X,Y",
+        "details": "X: 270, Y: 480",
+        "image": "",
+        "delay": "800"
+    },
+    {
+        "type": "Click X,Y",
+        "details": "X: 270, Y: 480",
+        "image": "",
+        "delay": "800"
+    },
+    {
+        "type": "Tìm ảnh và click",
+        "details": "Tìm ảnh và click",
+        "image": "attack.png",
+        "delay": "1500"
+    },
+    {
+        "type": "Tìm ảnh và click",
+        "details": "Tìm ảnh và click",
+        "image": "caileu.png",
+        "delay": "1500"
+    },
+    {
+        "type": "Tìm ảnh và click",
+        "details": "Tìm ảnh và click",
+        "image": "march.png",
+        "delay": "1500"
+    },
+    {
+        "type": "Tìm ảnh và click",
+        "details": "Tìm ảnh và click",
+        "image": "foot.png",
+        "delay": "1500"
+    },
+    {
+        "type": "Đợi ảnh xuất hiện",
+        "details": "Đợi ảnh xuất hiện",
+        "image": "caileu.png",
+        "delay": "180000"
+    }
+]

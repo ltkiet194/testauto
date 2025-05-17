@@ -1,0 +1,143 @@
+[
+    {
+        "type": "LOG_MESSAGE",
+        "note": "Bắt đầu kịch bản kiểm tra và tấn công game.",
+        "message": "Khởi động kịch bản...",
+        "delay": 500
+    },
+    {
+        "type": "IF_ELSE_BLOCK",
+        "note": "Kiểm tra xem game có đang ở màn hình chính không.",
+        "condition": {
+            "type": "IMAGE_EXISTS",
+            "image": "game_main_screen_identifier.png",
+            "timeout_ms": 3000,
+            "threshold": 0.8
+        },
+        "then_actions": [
+            {
+                "type": "LOG_MESSAGE",
+                "message": "Game đã ở màn hình chính. Bắt đầu chuỗi tấn công.",
+                "delay": 200
+            },
+            {
+                "type": "Tìm ảnh và click",
+                "note": "Click kính lúp",
+                "image": "kinh.png",
+                "delay": 1500
+            },
+            {
+                "type": "Tìm ảnh và click",
+                "note": "Click chọn loại quái",
+                "image": "quai.png",
+                "delay": 1500
+            },
+            {
+                "type": "Tìm ảnh và click",
+                "note": "Click nút tìm kiếm",
+                "image": "search.png",
+                "delay": 1500
+            },
+            {
+                "type": "Click X,Y",
+                "note": "Click vào kết quả tìm kiếm đầu tiên (tọa độ giả định)",
+                "details": "X: 270, Y: 480",
+                "delay": 800
+            },
+            {
+                "type": "Click X,Y",
+                "note": "Click lần 2 vào kết quả (nếu cần)",
+                "details": "X: 270, Y: 480",
+                "delay": 800
+            },
+            {
+                "type": "Tìm ảnh và click",
+                "note": "Click nút tấn công",
+                "image": "attack.png",
+                "delay": 1500
+            },
+            {
+                "type": "Tìm ảnh và click",
+                "note": "Click chọn lính/cài đặt lều",
+                "image": "caileu.png",
+                "delay": 1500
+            },
+            {
+                "type": "Tìm ảnh và click",
+                "note": "Click nút March/Xuất quân",
+                "image": "march.png",
+                "delay": 1500
+            },
+            {
+                "type": "Tìm ảnh và click",
+                "note": "Xác nhận hành quân/đợi dấu chân",
+                "image": "foot.png",
+                "delay": 1500
+            },
+            {
+                "type": "Đợi ảnh xuất hiện",
+                "note": "Đợi lính về lều (quay lại trạng thái caileu.png)",
+                "image": "caileu.png",
+                "delay": 180000
+            }
+        ],
+        "else_actions": [
+            {
+                "type": "LOG_MESSAGE",
+                "message": "Game chưa ở màn hình chính. Đang thử mở game...",
+                "delay": 200
+            },
+            {
+                "type": "Tìm ảnh và click",
+                "image": "game_icon_on_homescreen.png",
+                "note": "Tìm và click icon game trên màn hình chính điện thoại.",
+                "delay": 2000,
+                "threshold": 0.75
+            },
+            {
+                "type": "Đợi ảnh xuất hiện",
+                "image": "game_loading_screen.png",
+                "delay": 20000,
+                "note": "Đợi màn hình loading của game."
+            },
+            {
+                "type": "Đợi ảnh xuất hiện",
+                "image": "game_main_screen_identifier.png",
+                "delay": 30000,
+                "note": "Đợi vào được màn hình chính của game sau khi load."
+            },
+            {
+                "type": "IF_ELSE_BLOCK",
+                "note": "Kiểm tra lại: Đã vào được màn hình chính game chưa?",
+                "condition": {
+                    "type": "IMAGE_EXISTS",
+                    "image": "game_main_screen_identifier.png",
+                    "timeout_ms": 2000
+                },
+                "then_actions": [
+                    {
+                        "type": "LOG_MESSAGE",
+                        "message": "Đã mở game thành công và vào được màn hình chính. Kịch bản sẽ kết thúc. Hãy chạy lại kịch bản để thực hiện tấn công.",
+                        "delay": 1000
+                    }
+                ],
+                "else_actions": [
+                    {
+                        "type": "LOG_MESSAGE",
+                        "message": "Vẫn không thể vào màn hình chính của game sau khi thử mở. Dừng kịch bản.",
+                        "delay": 500,
+                        "is_error": true
+                    }
+                ],
+                "delay_after_block": 300
+            }
+        ],
+        "delay_after_block": 500
+    },
+    {
+        "type": "LOG_MESSAGE",
+        "note": "Kịch bản kiểm tra và tấn công đã kết thúc.",
+        "message": "Hoàn tất kịch bản.",
+        "delay": 500
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "type": "Đợi ảnh xuất hiện",
+        "details": "Đợi ảnh xuất hiện",
+        "image": "foot.png",
+        "delay": "15000"
+    },
+    {
+        "type": "Click X,Y",
+        "details": "X: 490, Y: 241",
+        "image": "",
+        "delay": "1500"
+    },
+    {
+        "type": "Tìm ảnh và click",
+        "details": "Tìm ảnh và click",
+        "image": "kinh.png",
+        "delay": "1500"
+    }
+]
